@@ -1,4 +1,4 @@
-import sys
+import pathlib
 
 from . import main2
 
@@ -7,5 +7,6 @@ __project_name__ = "yourtactics"
 
 def main() -> int:
     out = main2.render_template("go/Makefile.j2")
-    sys.stdout.write(out)
+    path = pathlib.Path("dailycould/{{ cookiecutter.project_slug }}/Makefile")
+    path.write_text(out)
     return 0

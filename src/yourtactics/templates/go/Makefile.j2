@@ -1,8 +1,8 @@
 BIN := {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
 
-.PHONY: all tidy fmt lint build
+.PHONY: all tidy fmt lint install clean
 
-all: tidy fmt lint build
+all: tidy fmt lint build install
 
 tidy:
 	go mod tidy
@@ -13,5 +13,11 @@ fmt:
 lint:
 	golangci-lint run
 
-build:
+build: $(BIN)
 	go build -o $(BIN) main.go
+
+install: build
+	go install
+
+clean:
+	$(RM) $(BIN)
