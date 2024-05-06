@@ -19,7 +19,7 @@ lint:
 	golangci-lint run
 
 $(BIN): $(SRC)
-	go build -o $@ main.go
+	go build -o $@ {% block main_go %}main.go{% endblock %}
 
 .PHONY: install
 install: $(BIN)

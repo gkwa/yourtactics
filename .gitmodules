@@ -4,3 +4,6 @@
 [submodule "allnew"]
 	path = allnew
 	url = git@github.com:taylormonacelli/allnew.git
+[submodule "bluesorrow"]
+	path = bluesorrow
+	url = git@github.com:taylormonacelli/bluesorrow
