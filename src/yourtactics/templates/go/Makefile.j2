@@ -1,0 +1,17 @@
+BIN := {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
+
+.PHONY: all tidy fmt lint build
+
+all: tidy fmt lint build
+
+tidy:
+	go mod tidy
+
+fmt:
+	gofumpt -w .
+
+lint:
+	golangci-lint run
+
+build:
+	go build -o $(BIN) main.go
