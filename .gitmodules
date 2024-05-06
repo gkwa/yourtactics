@@ -1,3 +1,6 @@
 [submodule "dailycould"]
 	path = dailycould
 	url = git@github.com:taylormonacelli/dailycould.git
+[submodule "allnew"]
+	path = allnew
+	url = git@github.com:taylormonacelli/allnew.git
