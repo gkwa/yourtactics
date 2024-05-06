@@ -7,3 +7,6 @@
 [submodule "bluesorrow"]
 	path = bluesorrow
 	url = git@github.com:taylormonacelli/bluesorrow
+[submodule "itsvermont"]
+	path = itsvermont
+	url = git@github.com:taylormonacelli/itsvermont
