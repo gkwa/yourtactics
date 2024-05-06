@@ -1,23 +1,30 @@
 BIN := {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
 
+SRC := $(wildcard *.go **/*.go)
+
 .PHONY: all tidy fmt lint install clean
 
-all: tidy fmt lint build install
+all: tidy fmt lint install
 
+.PHONY: tidy
 tidy:
 	go mod tidy
 
+.PHONY: fmt
 fmt:
 	gofumpt -w .
 
+.PHONY: lint
 lint:
 	golangci-lint run
 
-build: $(BIN)
-	go build -o $(BIN) main.go
+$(BIN): $(SRC)
+	go build -o $@ main.go
 
-install: build
+.PHONY: install
+install: $(BIN)
 	go install
 
+.PHONY: clean
 clean:
 	$(RM) $(BIN)
