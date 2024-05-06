@@ -1,0 +1,3 @@
+[submodule "dailycould"]
+	path = dailycould
+	url = git@github.com:taylormonacelli/dailycould.git
