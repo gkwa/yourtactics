@@ -31,6 +31,18 @@ def main() -> int:
             "template": "cookiecutter/cookiecutter.json",
             "path": "itsvermont/cookiecutter.json",
         },
+        {
+            "template": "go/goreleaser/goreleaser.yaml.j2",
+            "path": "dailycould/{{ cookiecutter.project_slug }}/.goreleaser.yaml",
+        },
+        {
+            "template": "go/goreleaser/goreleaser.yaml.j2",
+            "path": "allnew/{{ cookiecutter.project_slug }}/.goreleaser.yaml",
+        },
+        {
+            "template": "go/goreleaser/goreleaser.yaml.j2",
+            "path": "itsvermont/{{ cookiecutter.project_slug }}.goreleaser.yaml",
+        },
     ]
 
     for item in templates:

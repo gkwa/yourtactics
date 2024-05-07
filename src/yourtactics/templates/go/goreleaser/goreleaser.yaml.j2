@@ -1,0 +1,51 @@
+before:
+  hooks:
+  - go mod tidy
+  - go generate ./...
+builds:
+- env:
+  - CGO_ENABLED=0
+  goos:
+  - linux
+  - windows
+  - darwin
+  main: {% block main_go %}main.go{% endblock %}
+  goarch:
+  - amd64
+  binary: {% raw %}{{ cookiecutter.project_name }}{% endraw %}
+  id: {% raw %}{{ cookiecutter.project_name }}{% endraw %}
+archives:
+- format: tar.gz
+  name_template: |-
+    {% raw %}{{ cookiecutter.project_name }}{% endraw %}_ {{ "{%" }} raw {{ "%}" }}{% raw %}{{- title .Os }}_ {{- if eq .Arch "amd64" }}x86_64
+                               {{- else if eq .Arch "386" }}i386
+                               {{- else }}
+                               {{ .Arch }}
+                               {{ end }}
+                               {{- if .Arm }}v{{ .Arm }}{{ end }}{% endraw %}{{ "{%" }} endraw {{ "%}" }}
+
+  format_overrides:
+  - goos: windows
+    format: zip
+checksum:
+  name_template: checksums.txt
+{% raw %}
+snapshot:
+  name_template: '{{ incpatch .Version }}-next'
+{% endraw %}
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+{% raw %}
+brews:
+- name: {{ cookiecutter.project_name }}
+  directory: Formula
+  homepage: https://github.com/taylormonacelli/homebrew-tools
+  repository:
+    owner: taylormonacelli
+    name: homebrew-tools
+    branch: main
+{% endraw %}
