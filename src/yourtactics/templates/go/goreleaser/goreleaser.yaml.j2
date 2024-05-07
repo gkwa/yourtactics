@@ -29,10 +29,12 @@ archives:
     format: zip
 checksum:
   name_template: checksums.txt
+{{ "{%" }} raw {{ "%}" }}
 {% raw %}
 snapshot:
   name_template: '{{ incpatch .Version }}-next'
 {% endraw %}
+{{ "{%" }} endraw {{ "%}" }}
 changelog:
   sort: asc
   filters:
