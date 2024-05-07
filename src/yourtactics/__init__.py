@@ -6,16 +6,36 @@ __project_name__ = "yourtactics"
 
 
 def main() -> int:
-    out = main2.render_template("go/Makefile.j2")
-    path = pathlib.Path("dailycould/{{ cookiecutter.project_slug }}/Makefile")
-    path.write_text(out)
+    templates = [
+        {
+            "template": "go/Makefile.j2",
+            "path": "dailycould/{{ cookiecutter.project_slug }}/Makefile",
+        },
+        {
+            "template": "go/Makefile2.j2",
+            "path": "allnew/{{ cookiecutter.project_slug }}/Makefile",
+        },
+        {
+            "template": "go/Makefile2.j2",
+            "path": "itsvermont/{{ cookiecutter.project_slug }}/Makefile",
+        },
+        {
+            "template": "cookiecutter/cookiecutter.json",
+            "path": "dailycould/cookiecutter.json",
+        },
+        {
+            "template": "cookiecutter/cookiecutter.json",
+            "path": "allnew/cookiecutter.json",
+        },
+        {
+            "template": "cookiecutter/cookiecutter.json",
+            "path": "itsvermont/cookiecutter.json",
+        },
+    ]
 
-    out = main2.render_template("go/Makefile2.j2")
-    path = pathlib.Path("allnew/{{ cookiecutter.project_slug }}/Makefile")
-    path.write_text(out)
-
-    out = main2.render_template("go/Makefile2.j2")
-    path = pathlib.Path("itsvermont/{{ cookiecutter.project_slug }}/Makefile")
-    path.write_text(out)
+    for item in templates:
+        out = main2.render_template(item["template"])
+        path = pathlib.Path(item["path"])
+        path.write_text(out)
 
     return 0
