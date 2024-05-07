@@ -6,6 +6,10 @@ dailycould:
      path: "{{ cookiecutter.project_slug }}/Makefile"
    - template: go/goreleaser/goreleaser.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
+   - template: .github/workflows/ci.yml.j2
+     path: "{{ cookiecutter.project_slug }}/.github/workflows/ci.yml"
+   - template: .github/workflows/release.yml.j2
+     path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
 allnew:
  templates:
    - template: cookiecutter/cookiecutter.json
@@ -14,6 +18,10 @@ allnew:
      path: "{{ cookiecutter.project_slug }}/Makefile"
    - template: go/goreleaser/goreleaser2.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
+   - template: .github/workflows/ci.yml.j2
+     path: "{{ cookiecutter.project_slug }}/.github/workflows/ci.yml"
+   - template: .github/workflows/release.yml.j2
+     path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
 itsvermont:
  templates:
    - template: cookiecutter/cookiecutter.json
@@ -22,6 +30,10 @@ itsvermont:
      path: "{{ cookiecutter.project_slug }}/Makefile"
    - template: go/goreleaser/goreleaser.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
+   - template: .github/workflows/ci.yml.j2
+     path: "{{ cookiecutter.project_slug }}/.github/workflows/ci.yml"
+   - template: .github/workflows/release.yml.j2
+     path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
 bluesorrow:
  templates:
    - template: cookiecutter/cookiecutter.json
