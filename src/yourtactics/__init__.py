@@ -1,27 +1,27 @@
 import pathlib
 
+from . import args as argsmod
 from . import logging as mylog
-from . import main2
-from .args import parse_args
-from .templates import get_templates_data
+from . import templates
 
 __project_name__ = "yourtactics"
 
 
 def main() -> int:
-    args = parse_args()
+    args = argsmod.parse_args()
 
     mylog.configure_logging(args.verbose)
 
-    data = get_templates_data(args.templates)
+    data = templates.get_templates_data(args.templates)
     if data is None:
         return 1
 
     for project, project_data in data.items():
         for item in project_data["templates"]:
-            out = main2.render_template(item["template"])
             path = pathlib.Path(project) / item["path"]
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(out)
+
+            rendered = templates.render_template(item["template"])
+            path.write_text(rendered)
 
     return 0

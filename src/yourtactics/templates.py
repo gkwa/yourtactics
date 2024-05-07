@@ -2,6 +2,7 @@ import logging
 import pathlib
 import urllib.parse
 
+import jinja2
 import requests
 import yaml
 
@@ -49,3 +50,15 @@ def get_templates_data(templates: str):
     else:
         logging.error(f"Unsupported scheme '{parsed_url.scheme}' in templates URL")
         return None
+
+
+def get_template(template_name):
+    TEMPLATES_PATH = pathlib.Path(__file__).resolve().parent / "templates"
+    loader = jinja2.FileSystemLoader(searchpath=TEMPLATES_PATH)
+    env = jinja2.Environment(loader=loader, keep_trailing_newline=True)
+    return env.get_template(template_name)
+
+
+def render_template(template_name, data=None):
+    template = get_template(template_name)
+    return template.render(data=data)
