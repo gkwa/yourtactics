@@ -14,4 +14,8 @@ def main() -> int:
     path = pathlib.Path("allnew/{{ cookiecutter.project_slug }}/Makefile")
     path.write_text(out)
 
+    out = main2.render_template("go/Makefile2.j2")
+    path = pathlib.Path("itsvermont/{{ cookiecutter.project_slug }}/Makefile")
+    path.write_text(out)
+
     return 0

@@ -4,7 +4,7 @@ SRC := $(wildcard *.go **/*.go)
 
 .PHONY: all tidy fmt lint install clean
 
-all: tidy fmt lint install
+all: tidy fmt lint vet install
 
 .PHONY: tidy
 tidy:
@@ -17,6 +17,10 @@ fmt:
 .PHONY: lint
 lint:
 	golangci-lint run
+
+.PHONY: vet
+vet:
+	go vet ./...
 
 $(BIN): $(SRC)
 	go build -o $@ {% block main_go %}main.go{% endblock %}
