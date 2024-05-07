@@ -1,7 +1,7 @@
 import pathlib
 
 from . import args as argsmod
-from . import logging as mylog
+from . import logging as logmod
 from . import templates
 
 __project_name__ = "yourtactics"
@@ -10,7 +10,7 @@ __project_name__ = "yourtactics"
 def main() -> int:
     args = argsmod.parse_args()
 
-    mylog.configure_logging(args.verbose)
+    logmod.configure_logging(args.verbose)
 
     data = templates.get_templates_data(args.templates)
     if data is None:
