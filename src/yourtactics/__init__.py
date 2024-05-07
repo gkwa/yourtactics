@@ -1,53 +1,27 @@
 import pathlib
 
+from . import logging as mylog
 from . import main2
+from .args import parse_args
+from .templates import get_templates_data
 
 __project_name__ = "yourtactics"
 
 
 def main() -> int:
-    templates = [
-        {
-            "template": "go/Makefile.j2",
-            "path": "dailycould/{{ cookiecutter.project_slug }}/Makefile",
-        },
-        {
-            "template": "go/Makefile2.j2",
-            "path": "allnew/{{ cookiecutter.project_slug }}/Makefile",
-        },
-        {
-            "template": "go/Makefile2.j2",
-            "path": "itsvermont/{{ cookiecutter.project_slug }}/Makefile",
-        },
-        {
-            "template": "cookiecutter/cookiecutter.json",
-            "path": "dailycould/cookiecutter.json",
-        },
-        {
-            "template": "cookiecutter/cookiecutter.json",
-            "path": "allnew/cookiecutter.json",
-        },
-        {
-            "template": "cookiecutter/cookiecutter.json",
-            "path": "itsvermont/cookiecutter.json",
-        },
-        {
-            "template": "go/goreleaser/goreleaser.yaml.j2",
-            "path": "dailycould/{{ cookiecutter.project_slug }}/.goreleaser.yaml",
-        },
-        {
-            "template": "go/goreleaser/goreleaser.yaml.j2",
-            "path": "allnew/{{ cookiecutter.project_slug }}/.goreleaser.yaml",
-        },
-        {
-            "template": "go/goreleaser/goreleaser.yaml.j2",
-            "path": "itsvermont/{{ cookiecutter.project_slug }}.goreleaser.yaml",
-        },
-    ]
+    args = parse_args()
 
-    for item in templates:
-        out = main2.render_template(item["template"])
-        path = pathlib.Path(item["path"])
-        path.write_text(out)
+    mylog.configure_logging(args.verbose)
+
+    data = get_templates_data(args.templates)
+    if data is None:
+        return 1
+
+    for project, project_data in data.items():
+        for item in project_data["templates"]:
+            out = main2.render_template(item["template"])
+            path = pathlib.Path(project) / item["path"]
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(out)
 
     return 0

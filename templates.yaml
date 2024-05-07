@@ -1,0 +1,28 @@
+dailycould:
+ templates:
+   - template: cookiecutter/cookiecutter.json
+     path: cookiecutter.json
+   - template: go/Makefile.j2
+     path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/goreleaser/goreleaser.yaml.j2
+     path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
+allnew:
+ templates:
+   - template: cookiecutter/cookiecutter.json
+     path: cookiecutter.json
+   - template: go/Makefile2.j2
+     path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/goreleaser/goreleaser2.yaml.j2
+     path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
+itsvermont:
+ templates:
+   - template: cookiecutter/cookiecutter.json
+     path: cookiecutter.json
+   - template: go/Makefile2.j2
+     path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/goreleaser/goreleaser.yaml.j2
+     path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
+bluesorrow:
+ templates:
+   - template: cookiecutter/cookiecutter.json
+     path: cookiecutter.json
