@@ -1,6 +1,6 @@
 dailycould:
  templates:
-   - template: cookiecutter/cookiecutter.json
+   - template: cookiecutter/cookiecutter.json.j2
      path: cookiecutter.json
    - template: go/Makefile.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
@@ -14,7 +14,7 @@ dailycould:
      path: "{{ cookiecutter.project_slug }}/version/version.go"
 allnew:
  templates:
-   - template: cookiecutter/cookiecutter.json
+   - template: cookiecutter/cookiecutter.json.j2
      path: cookiecutter.json
    - template: go/Makefile2.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
@@ -28,7 +28,7 @@ allnew:
      path: "{{ cookiecutter.project_slug }}/version/version.go"
 itsvermont:
  templates:
-   - template: cookiecutter/cookiecutter.json
+   - template: cookiecutter/cookiecutter.json.j2
      path: cookiecutter.json
    - template: go/Makefile2.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
@@ -42,5 +42,5 @@ itsvermont:
      path: "{{ cookiecutter.project_slug }}/version/version.go"
 bluesorrow:
  templates:
-   - template: cookiecutter/cookiecutter.json
+   - template: cookiecutter/cookiecutter.json.j2
      path: cookiecutter.json
