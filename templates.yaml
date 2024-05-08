@@ -1,6 +1,6 @@
 dailycould:
  templates:
-   - template: cookiecutter/cookiecutter.json.j2
+   - template: cookiecutter/homebrew/cookiecutter.json.j2
      path: cookiecutter.json
    - template: go/Makefile.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
@@ -12,6 +12,8 @@ dailycould:
      path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
    - template: go/version/version.go.j2
      path: "{{ cookiecutter.project_slug }}/version/version.go"
+   - template: README/README.md.j2
+     path: "{{ cookiecutter.project_slug }}/README.md"
 allnew:
  templates:
    - template: cookiecutter/cookiecutter.json.j2
@@ -26,6 +28,8 @@ allnew:
      path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
    - template: go/version/version.go.j2
      path: "{{ cookiecutter.project_slug }}/version/version.go"
+   - template: README/README.md.j2
+     path: "{{ cookiecutter.project_slug }}/README.md"
 itsvermont:
  templates:
    - template: cookiecutter/cookiecutter.json.j2
@@ -40,7 +44,11 @@ itsvermont:
      path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
    - template: go/version/version.go.j2
      path: "{{ cookiecutter.project_slug }}/version/version.go"
+   - template: README/README.md.j2
+     path: "{{ cookiecutter.project_slug }}/README.md"
 bluesorrow:
  templates:
    - template: cookiecutter/cookiecutter.json.j2
      path: cookiecutter.json
+   - template: README/README.md.j2
+     path: "{{ cookiecutter.project_slug }}/README.md"

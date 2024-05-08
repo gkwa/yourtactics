@@ -12,8 +12,8 @@ builds:
   main: {% block main_go %}main.go{% endblock %}
   goarch:
   - amd64
-  binary: {% raw %}{{ cookiecutter.project_name }}{% endraw %}
-  id: {% raw %}{{ cookiecutter.project_name }}{% endraw %}
+  binary: {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
+  id: {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
   ldflags:
   - -s -w
     -X "github.com/{% raw %}{{ cookiecutter.github_username }}{% endraw %}/{% raw %}{{ cookiecutter.project_slug }}{% endraw %}/version.Version={{ "{%" }} raw {{ "%}" }}{{ "{{" }}.Version{{ "}}" }}{{ "{%" }} endraw {{ "%}" }}"
@@ -24,7 +24,7 @@ builds:
 archives:
 - format: tar.gz
   name_template: |-
-    {% raw %}{{ cookiecutter.project_name }}{% endraw %}_ {{ "{%" }} raw {{ "%}" }}{% raw %}{{- title .Os }}_ {{- if eq .Arch "amd64" }}x86_64
+    {% raw %}{{ cookiecutter.project_slug }}{% endraw %}_ {{ "{%" }} raw {{ "%}" }}{% raw %}{{- title .Os }}_ {{- if eq .Arch "amd64" }}x86_64
                                {{- else if eq .Arch "386" }}i386
                                {{- else }}
                                {{ .Arch }}
@@ -49,11 +49,22 @@ changelog:
     - '^test:'
 {% raw -%}
 brews:
-- name: {{ cookiecutter.project_name }}
+- name: {{ cookiecutter.project_slug }}
   directory: Formula
   homepage: https://github.com/{{ cookiecutter.github_username }}/homebrew-tools
   repository:
     owner: {{ cookiecutter.github_username }}
     name: homebrew-tools
     branch: main
+{%- endraw %}
+{% raw -%}
+scoops:
+ - name: {{ cookiecutter.project_slug }}
+   homepage: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+   description: "Description of the {{ cookiecutter.project_slug }} project"
+   license: MIT
+   repository:
+     owner: {{ cookiecutter.github_username }}
+     name: scoop-bucket
+     branch: main
 {%- endraw %}
