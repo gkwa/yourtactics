@@ -14,6 +14,8 @@ dailycould:
      path: "{{ cookiecutter.project_slug }}/version/version.go"
    - template: README/README.md.j2
      path: "{{ cookiecutter.project_slug }}/README.md"
+   - template: gitignore/gitignore2.j2
+     path: "{{ cookiecutter.project_slug }}/.gitignore"
 allnew:
  templates:
    - template: cookiecutter/cookiecutter.json.j2
@@ -30,6 +32,8 @@ allnew:
      path: "{{ cookiecutter.project_slug }}/version/version.go"
    - template: README/README.md.j2
      path: "{{ cookiecutter.project_slug }}/README.md"
+   - template: gitignore/gitignore2.j2
+     path: "{{ cookiecutter.project_slug }}/.gitignore"
 itsvermont:
  templates:
    - template: cookiecutter/cookiecutter.json.j2
@@ -46,9 +50,13 @@ itsvermont:
      path: "{{ cookiecutter.project_slug }}/version/version.go"
    - template: README/README.md.j2
      path: "{{ cookiecutter.project_slug }}/README.md"
+   - template: gitignore/gitignore2.j2
+     path: "{{ cookiecutter.project_slug }}/.gitignore"
 bluesorrow:
  templates:
    - template: cookiecutter/cookiecutter.json.j2
      path: cookiecutter.json
    - template: README/README.md.j2
      path: "{{ cookiecutter.project_slug }}/README.md"
+   - template: gitignore/gitignore2.j2
+     path: "{{ cookiecutter.project_slug }}/.gitignore"
