@@ -4,6 +4,10 @@ dailycould:
      path: cookiecutter.json
    - template: go/Makefile.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/go.mod.j2
+     path: "{{ cookiecutter.project_slug }}/go.mod"
+   - template: cookiecutter/hooks/post_gen_project.py
+     path: hooks/post_gen_project.py
    - template: go/magefile.go.j2
      path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser.yaml.j2
@@ -24,6 +28,10 @@ allnew:
      path: cookiecutter.json
    - template: go/Makefile2.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/go.mod.j2
+     path: "{{ cookiecutter.project_slug }}/go.mod"
+   - template: cookiecutter/hooks/post_gen_project.py
+     path: hooks/post_gen_project.py
    - template: go/magefile.go.j2
      path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser2.yaml.j2
@@ -44,6 +52,10 @@ itsvermont:
      path: cookiecutter.json
    - template: go/Makefile2.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/go.mod.j2
+     path: "{{ cookiecutter.project_slug }}/go.mod"
+   - template: cookiecutter/hooks/post_gen_project.py
+     path: hooks/post_gen_project.py
    - template: go/magefile.go.j2
      path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser.yaml.j2
@@ -66,3 +78,7 @@ bluesorrow:
      path: "{{ cookiecutter.project_slug }}/README.md"
    - template: gitignore/gitignore2.j2
      path: "{{ cookiecutter.project_slug }}/.gitignore"
+   - template: go/go.mod.j2
+     path: "{{ cookiecutter.project_slug }}/go.mod"
+   - template: cookiecutter/hooks/post_gen_project.py
+     path: hooks/post_gen_project.py
