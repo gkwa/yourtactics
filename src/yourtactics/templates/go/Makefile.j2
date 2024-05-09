@@ -10,7 +10,7 @@ FULL_SHA := $(shell git rev-parse HEAD)
 
 export GOVERSION # goreleaser wants this
 
-PREFIX := github.com/{% raw %}{{ cookiecutter.github_username }}{% endraw %}/{% raw %}{{ cookiecutter.project_slug }}{% endraw %}/version
+PREFIX := {% raw %}github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version{% endraw %}
 LDFLAGS = -s -w
 LDFLAGS += -X $(PREFIX).Version=$(VERSION)
 LDFLAGS += -X '$(PREFIX).Date=$(DATE)'
