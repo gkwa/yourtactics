@@ -16,11 +16,11 @@ builds:
   id: {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
   ldflags:
   - -s -w
-    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.Version={% endraw %}{{ "{%" }} raw {{ "%}" }}{{ "{{" }}.Version{{ "}}" }}{{ "{%" }} endraw {{ "%}" }}"
-    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.Date={% endraw %}{{ "{%" }} raw {{ "%}" }}{{ "{{" }}.CommitDate{{ "}}" }}{{ "{%" }} endraw {{ "%}" }}"
-    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.GoVersion={% endraw %}{{ "{%" }} raw {{ "%}" }}{{ "{{" }}.Env.GOVERSION{{ "}}" }}{{ "{%" }} endraw {{ "%}" }}"
-    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.ShortGitSHA={% endraw %}{{ "{%" }} raw {{ "%}" }}{{ "{{" }}.ShortCommit{{ "}}" }}{{ "{%" }} endraw {{ "%}" }}"
-    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.FullGitSHA={% endraw %}{{ "{%" }} raw {{ "%}" }}{{ "{{" }}.FullCommit{{ "}}" }}{{ "{%" }} endraw {{ "%}" }}"
+    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.Version={{ "{{" }} .Version {{ "}}" }}"{% endraw %}
+    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.Date={{ "{{" }} .CommitDate {{ "}}" }}"{% endraw %}
+    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.GoVersion={{ "{{" }} .Env.GOVERSION {{ "}}" }}"{% endraw %}
+    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.ShortGitSHA={{ "{{" }} .ShortCommit {{ "}}" }}"{% endraw %}
+    {% raw %}-X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.FullGitSHA={{ "{{" }} .FullCommit {{ "}}" }}"{% endraw %}
 archives:
 - format: tar.gz
   name_template: |-
