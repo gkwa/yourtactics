@@ -4,6 +4,8 @@ dailycould:
      path: cookiecutter.json
    - template: go/Makefile.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/magefile.go.j2
+     path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
    - template: .github/workflows/ci.yml.j2
@@ -22,6 +24,8 @@ allnew:
      path: cookiecutter.json
    - template: go/Makefile2.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/magefile.go.j2
+     path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser2.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
    - template: .github/workflows/ci.yml.j2
@@ -40,6 +44,8 @@ itsvermont:
      path: cookiecutter.json
    - template: go/Makefile2.j2
      path: "{{ cookiecutter.project_slug }}/Makefile"
+   - template: go/magefile.go.j2
+     path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
    - template: .github/workflows/ci.yml.j2
