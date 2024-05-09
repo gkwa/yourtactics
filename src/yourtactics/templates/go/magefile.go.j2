@@ -18,12 +18,12 @@ var (
 	fullGitSHA  = ""
 )
 
-{% raw %}
+{% raw -%}
 const (
 	ldFlagsPrefix = "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version"
 	buildTarget   = "{{ cookiecutter.project_slug }}"
 )
-{% endraw %}
+{%- endraw %}
 
 func init() {
 	var err error
