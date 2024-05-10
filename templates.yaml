@@ -12,9 +12,9 @@ dailycould:
      path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
-   - template: .github/workflows/ci.yml.j2
+   - template: github/workflows/ci.yml.j2
      path: "{{ cookiecutter.project_slug }}/.github/workflows/ci.yml"
-   - template: .github/workflows/release.yml.j2
+   - template: github/workflows/release.yml.j2
      path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
    - template: go/version/version.go.j2
      path: "{{ cookiecutter.project_slug }}/version/version.go"
@@ -36,9 +36,9 @@ allnew:
      path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser2.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
-   - template: .github/workflows/ci.yml.j2
+   - template: github/workflows/ci.yml.j2
      path: "{{ cookiecutter.project_slug }}/.github/workflows/ci.yml"
-   - template: .github/workflows/release.yml.j2
+   - template: github/workflows/release.yml.j2
      path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
    - template: go/version/version.go.j2
      path: "{{ cookiecutter.project_slug }}/version/version.go"
@@ -60,9 +60,9 @@ itsvermont:
      path: "{{ cookiecutter.project_slug }}/magefile.go"
    - template: go/goreleaser/goreleaser.yaml.j2
      path: "{{ cookiecutter.project_slug }}/.goreleaser.yaml"
-   - template: .github/workflows/ci.yml.j2
+   - template: github/workflows/ci.yml.j2
      path: "{{ cookiecutter.project_slug }}/.github/workflows/ci.yml"
-   - template: .github/workflows/release.yml.j2
+   - template: github/workflows/release.yml.j2
      path: "{{ cookiecutter.project_slug }}/.github/workflows/release.yml"
    - template: go/version/version.go.j2
      path: "{{ cookiecutter.project_slug }}/version/version.go"
