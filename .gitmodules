@@ -10,3 +10,6 @@
 [submodule "itsvermont"]
 	path = itsvermont
 	url = git@github.com:taylormonacelli/itsvermont
+[submodule "awaybeen"]
+	path = awaybeen
+	url = git@github.com:taylormonacelli/awaybeen.git
