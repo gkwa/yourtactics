@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/magefile/mage/mg"
 	"github.com/magefile/mage/sh"
@@ -27,7 +28,7 @@ const (
 
 func init() {
 	var err error
-    date := time.Now().UTC().Format(time.RFC3339)
+	date := time.Now().UTC().Format(time.RFC3339)
 	version, err = sh.Output("git", "describe", "--tags", "--abbrev=8", "--dirty", "--always", "--long")
 	if err != nil {
 		fmt.Printf("Error getting version: %v\n", err)
