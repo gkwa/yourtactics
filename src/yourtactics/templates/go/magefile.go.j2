@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/go-git/go-git/v5"
+	. "github.com/go-git/go-git/v5/_examples"
 	"github.com/magefile/mage/mg"
 	"github.com/magefile/mage/sh"
 )
@@ -26,25 +28,47 @@ const (
 )
 {%- endraw %}
 
+var (
+	version     = ""
+	date        = ""
+	goVersion   = ""
+	shortGitSHA = ""
+	fullGitSHA  = ""
+)
+
+const (
+	ldFlagsPrefix = "github.com/taylormonacelli/closelylisten/version"
+	buildTarget   = "closelylisten"
+)
+
 func init() {
 	var err error
 	date = time.Now().UTC().Format(time.RFC3339)
-	version, err = sh.Output("git", "describe", "--tags", "--abbrev=8", "--dirty", "--always", "--long")
-	if err != nil {
-		fmt.Printf("Error getting version: %v\n", err)
+
+	r, err := git.PlainOpen(".")
+	CheckIfError(err)
+
+	ref, err := r.Head()
+	CheckIfError(err)
+
+	cIter, err := r.Log(&git.LogOptions{From: ref.Hash()})
+	CheckIfError(err)
+
+	commit, err := cIter.Next()
+	CheckIfError(err)
+
+	version = commit.Hash.String()[:8]
+	if commit.NumParents() > 0 {
+		version += "-dirty"
 	}
+
 	goVersion, err = sh.Output("go", "version")
 	if err != nil {
 		fmt.Printf("Error getting Go version: %v\n", err)
 	}
-	shortGitSHA, err = sh.Output("git", "rev-parse", "--short", "HEAD")
-	if err != nil {
-		fmt.Printf("Error getting short Git SHA: %v\n", err)
-	}
-	fullGitSHA, err = sh.Output("git", "rev-parse", "HEAD")
-	if err != nil {
-		fmt.Printf("Error getting full Git SHA: %v\n", err)
-	}
+
+	shortGitSHA = commit.Hash.String()[:7]
+	fullGitSHA = commit.Hash.String()
 }
 
 func Lint() error {
