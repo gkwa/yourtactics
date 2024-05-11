@@ -32,10 +32,6 @@ func init() {
 	if err != nil {
 		fmt.Printf("Error getting version: %v\n", err)
 	}
-	date, err = sh.Output("date", "+%Y-%m-%dT%H:%M:%SZ")
-	if err != nil {
-		fmt.Printf("Error getting date: %v\n", err)
-	}
 	goVersion, err = sh.Output("go", "version")
 	if err != nil {
 		fmt.Printf("Error getting Go version: %v\n", err)
