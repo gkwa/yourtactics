@@ -13,3 +13,6 @@
 [submodule "awaybeen"]
 	path = awaybeen
 	url = git@github.com:taylormonacelli/awaybeen.git
+[submodule "downmust"]
+	path = downmust
+	url = git@github.com:taylormonacelli/downmust.git
