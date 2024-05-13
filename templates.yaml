@@ -58,7 +58,7 @@ downmust:
     path: hooks/post_gen_project.py
   - template: go/magefile/magefile4.go.j2
     path: '{{ cookiecutter.project_slug }}/magefile.go'
-  - template: go/goreleaser/goreleaser2.yaml.j2
+  - template: go/goreleaser/goreleaser4.yaml.j2
     path: '{{ cookiecutter.project_slug }}/.goreleaser.yaml'
   - template: github/workflows/ci.yml.j2
     path: '{{ cookiecutter.project_slug }}/.github/workflows/ci.yml'
