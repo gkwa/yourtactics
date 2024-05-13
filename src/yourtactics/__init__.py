@@ -12,14 +12,14 @@ def main() -> int:
 
     logmod.configure_logging(args.verbose)
 
-    data = templates.get_templates_data(args.templates)
-    if data is None:
-        return 1
-
-    for project, project_data in data.items():
-        for item in project_data["templates"]:
+    for project in templates.get_all_templates():
+        for item in templates.get_templates(project):
             path = pathlib.Path(project) / item["path"]
             path.parent.mkdir(parents=True, exist_ok=True)
+
+            template_path = templates.get_template_path(item["template"])
+            logmod.logging.debug(f"Reading template: {template_path}")
+            logmod.logging.debug(f"Writing to: {path.resolve()}")
 
             rendered = templates.render_template(item["template"])
             path.write_text(rendered)
