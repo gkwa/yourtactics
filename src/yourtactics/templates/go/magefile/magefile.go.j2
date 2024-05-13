@@ -23,12 +23,12 @@ var (
 
 var Default = Iterate // default mage target
 
-{% raw -%}
 const (
-	ldFlagsPrefix = "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version"
+	ldFlagsPrefix = "{% block bxxarg %}{% raw %}github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version{% endraw %}{% endblock %}"
+{%- raw %}
 	buildTarget   = "{{ cookiecutter.project_slug }}"
+{% endraw -%}
 )
-{%- endraw %}
 
 func init() {
 	var err error

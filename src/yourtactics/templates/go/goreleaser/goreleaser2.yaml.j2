@@ -1,2 +1,5 @@
-{% extends 'go/goreleaser/goreleaser.yaml.j2' %}
+{% extends 'go/goreleaser/goreleaser-base.yaml.j2' %}
 {% block main_go %}cmd/main.go{% endblock %}
+{% block bxxarg -%}
+{% raw %}github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version{% endraw %}
+{%- endblock %}

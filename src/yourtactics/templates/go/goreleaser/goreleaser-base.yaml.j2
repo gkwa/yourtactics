@@ -1,3 +1,6 @@
+{% macro bxx(base) -%}
+{% block bxxarg %}{% endblock %}
+{%- endmacro %}
 before:
   hooks:
   - go mod tidy
@@ -14,15 +17,13 @@ builds:
   - amd64
   binary: {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
   id: {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
-  {% raw -%}
   ldflags:
   - -s -w
-    -X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.Version={{ "{{" }} .Version {{ "}}" }}"
-    -X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.Date={{ "{{" }} .CommitDate {{ "}}" }}"
-    -X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.GoVersion={{ "{{" }} .Env.GOVERSION {{ "}}" }}"
-    -X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.ShortGitSHA={{ "{{" }} .ShortCommit {{ "}}" }}"
-    -X "github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version.FullGitSHA={{ "{{" }} .FullCommit {{ "}}" }}"
-  {%- endraw %}
+    -X "{{ bxx() }}.Version={% raw %}{{ "{{" }} .Version {{ "}}" }}"{% endraw %}
+    -X "{{ bxx() }}.Date={% raw %}{{ "{{" }} .CommitDate {{ "}}" }}"{% endraw %}
+    -X "{{ bxx() }}.GoVersion={% raw %}{{ "{{" }} .Env.GOVERSION {{ "}}" }}"{% endraw %}
+    -X "{{ bxx() }}.ShortGitSHA={% raw %}{{ "{{" }} .ShortCommit {{ "}}" }}"{% endraw %}
+    -X "{{ bxx() }}.FullGitSHA={% raw %}{{ "{{" }} .FullCommit {{ "}}" }}"{% endraw %}
 archives:
 - format: tar.gz
   name_template: |-

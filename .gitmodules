@@ -16,3 +16,6 @@
 [submodule "downmust"]
 	path = downmust
 	url = git@github.com:taylormonacelli/downmust.git
+[submodule "allshire"]
+	path = allshire
+	url = git@github.com:taylormonacelli/allshire
