@@ -95,7 +95,7 @@ func Build() error {
 		ldFlagsPrefix, fullGitSHA,
 	)
 
-	return sh.Run("go", "build", "-ldflags", ldflags, "-o", buildTarget, "{% block main_go %}main.go{% endblock %}")
+	return sh.Run("go", "build", "-ldflags", ldflags, "-o", buildTarget{% if self.main_go() %}, "{{ self.main_go() | trim }}"{% endif %})
 }
 
 func Install() error {

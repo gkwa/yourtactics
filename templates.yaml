@@ -32,7 +32,7 @@ dailycould:
     path: '{{ cookiecutter.project_slug }}/go.mod'
   - template: cookiecutter/hooks/post_gen_project.py
     path: hooks/post_gen_project.py
-  - template: go/magefile/magefile.go.j2
+  - template: go/magefile/magefile4.go.j2
     path: '{{ cookiecutter.project_slug }}/magefile.go'
   - template: go/goreleaser/goreleaser4.yaml.j2
     path: '{{ cookiecutter.project_slug }}/.goreleaser.yaml'
@@ -56,7 +56,7 @@ downmust:
     path: '{{ cookiecutter.project_slug }}/go.mod'
   - template: cookiecutter/hooks/post_gen_project.py
     path: hooks/post_gen_project.py
-  - template: go/magefile/magefile.go.j2
+  - template: go/magefile/magefile4.go.j2
     path: '{{ cookiecutter.project_slug }}/magefile.go'
   - template: go/goreleaser/goreleaser2.yaml.j2
     path: '{{ cookiecutter.project_slug }}/.goreleaser.yaml'
