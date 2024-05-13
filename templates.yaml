@@ -34,9 +34,9 @@ dailycould:
       path: '{{ cookiecutter.project_slug }}/README.md'
     - template: gitignore/gitignore2.j2
       path: '{{ cookiecutter.project_slug }}/.gitignore'
-    - template: go/go.mod/go.mod-base.j2
+    - template: go/go.mod/go.mod.j2
       path: '{{ cookiecutter.project_slug }}/go.mod'
-    - template: go/version/version-base.go.j2
+    - template: go/version/version.go.j2
       path: '{{ cookiecutter.project_slug }}/version/version.go'
     - template: github/workflows/ci.yml.j2
       path: '{{ cookiecutter.project_slug }}/.github/workflows/ci.yml'
@@ -58,9 +58,9 @@ downmust:
       path: '{{ cookiecutter.project_slug }}/README.md'
     - template: gitignore/gitignore2.j2
       path: '{{ cookiecutter.project_slug }}/.gitignore'
-    - template: go/go.mod/go.mod-base.j2
+    - template: go/go.mod/go.mod.j2
       path: '{{ cookiecutter.project_slug }}/go.mod'
-    - template: go/version/version-base.go.j2
+    - template: go/version/version.go.j2
       path: '{{ cookiecutter.project_slug }}/version/version.go'
     - template: github/workflows/ci.yml.j2
       path: '{{ cookiecutter.project_slug }}/.github/workflows/ci.yml'
@@ -82,9 +82,9 @@ allnew:
       path: '{{ cookiecutter.project_slug }}/README.md'
     - template: gitignore/gitignore2.j2
       path: '{{ cookiecutter.project_slug }}/.gitignore'
-    - template: go/go.mod/go.mod-base.j2
+    - template: go/go.mod/go.mod.j2
       path: '{{ cookiecutter.project_slug }}/go.mod'
-    - template: go/version/version-base.go.j2
+    - template: go/version/version.go.j2
       path: '{{ cookiecutter.project_slug }}/version/version.go'
     - template: github/workflows/ci.yml.j2
       path: '{{ cookiecutter.project_slug }}/.github/workflows/ci.yml'
@@ -106,9 +106,9 @@ itsvermont:
       path: '{{ cookiecutter.project_slug }}/README.md'
     - template: gitignore/gitignore2.j2
       path: '{{ cookiecutter.project_slug }}/.gitignore'
-    - template: go/go.mod/go.mod-base.j2
+    - template: go/go.mod/go.mod.j2
       path: '{{ cookiecutter.project_slug }}/go.mod'
-    - template: go/version/version-base.go.j2
+    - template: go/version/version.go.j2
       path: '{{ cookiecutter.project_slug }}/version/version.go'
     - template: github/workflows/ci.yml.j2
       path: '{{ cookiecutter.project_slug }}/.github/workflows/ci.yml'
@@ -130,5 +130,5 @@ bluesorrow:
       path: '{{ cookiecutter.project_slug }}/README.md'
     - template: gitignore/gitignore2.j2
       path: '{{ cookiecutter.project_slug }}/.gitignore'
-    - template: go/go.mod/go.mod-base.j2
+    - template: go/go.mod/go.mod.j2
       path: '{{ cookiecutter.project_slug }}/go.mod'
