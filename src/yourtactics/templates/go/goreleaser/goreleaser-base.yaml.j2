@@ -12,7 +12,9 @@ builds:
   - linux
   - windows
   - darwin
+  {% if self.goreleaser_main_go() -%}
   {% block goreleaser_main_go %}main: {% block main_go %}main.go{% endblock %}{%- endblock %}
+  {% endif -%}
   goarch:
   - amd64
   binary: {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
