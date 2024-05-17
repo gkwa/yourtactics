@@ -36,7 +36,7 @@ check: .timestamps/.check.time
 build: $(BIN)
 
 $(BIN): .timestamps/.build.time
-	go build -ldflags "$(LDFLAGS)" -o $@{% block main_go %} main.go{% endblock %}
+	go build -ldflags "$(LDFLAGS)" -o $@{% block main_go %}{% endblock %}
 
 .timestamps/.build.time: $(SRC)
 	@mkdir -p .timestamps
