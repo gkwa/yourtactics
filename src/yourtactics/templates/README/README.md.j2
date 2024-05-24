@@ -1,4 +1,4 @@
-# {{ "{{" }} cookiecutter.project_slug {{ "}}" }}
+# {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
 
 Purpose:
 
@@ -10,15 +10,13 @@ Purpose:
 
 ```
 
-## install {{ "{{" }} cookiecutter.project_slug {{ "}}" }}
+## install {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
 
 
 on macos/linux:
 ```bash
 
-{% raw %}
-brew install {{ cookiecutter.github_username }}/homebrew-tools/{{ cookiecutter.project_slug }}
-{% endraw %}
+brew install {% raw %}{{ cookiecutter.github_username }}/homebrew-tools/{{ cookiecutter.project_slug }}{% endraw %}
 
 ```
 
