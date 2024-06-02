@@ -19,3 +19,6 @@
 [submodule "allshire"]
 	path = allshire
 	url = git@github.com:taylormonacelli/allshire
+[submodule "justplay"]
+	path = justplay
+	url = git@github.com:gkwa/justplay.git
