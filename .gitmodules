@@ -22,3 +22,6 @@
 [submodule "justplay"]
 	path = justplay
 	url = git@github.com:gkwa/justplay.git
+[submodule "fewidentity"]
+	path = fewidentity
+	url = git@github.com:gkwa/fewidentity.git
