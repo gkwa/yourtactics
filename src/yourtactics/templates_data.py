@@ -1,5 +1,12 @@
 import typing
 
+_renovate = [
+    {
+        "template": "renovate/renovate.json.j2",
+        "path": "{{ cookiecutter.project_slug }}/renovate.json",
+    },
+]
+
 _cookiecutter_json = [
     {
         "template": "cookiecutter/homebrew-and-scoop/cookiecutter.json.j2",
@@ -54,7 +61,7 @@ _version = [
 ]
 
 _shared = (
-    _cookiecutter_json + _post_gen_project + _readme + _gitignore + _workflows + _go_mod
+    _cookiecutter_json + _post_gen_project + _readme + _gitignore + _workflows + _go_mod + _renovate
 )
 
 allshire_templates = _shared + [
