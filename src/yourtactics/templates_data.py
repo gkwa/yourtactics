@@ -111,7 +111,7 @@ allnew_templates = (
     + _version
     + [
         {
-            "template": "go/Makefile/Makefile2.j2",
+            "template": "go/Makefile/Makefile4.j2",
             "path": "{{ cookiecutter.project_slug }}/Makefile",
         },
         {
@@ -127,7 +127,24 @@ allnew_templates = (
 
 downmust_templates = dailycould_templates
 
-itsvermont_templates = allnew_templates
+itsvermont_templates = (
+    _shared
+    + _version
+    + [
+        {
+            "template": "go/Makefile/Makefile2.j2",
+            "path": "{{ cookiecutter.project_slug }}/Makefile",
+        },
+        {
+            "template": "go/magefile/magefile2.go.j2",
+            "path": "{{ cookiecutter.project_slug }}/magefile.go",
+        },
+        {
+            "template": "go/goreleaser/goreleaser2.yaml.j2",
+            "path": "{{ cookiecutter.project_slug }}/.goreleaser.yaml",
+        },
+    ]
+)
 
 fewidentity_templates = dailycould_templates
 
