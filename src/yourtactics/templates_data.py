@@ -151,11 +151,11 @@ fewidentity_templates = dailycould_templates
 bluesorrow_templates = _shared
 
 data: typing.Dict[str, typing.Dict[str, typing.List[typing.Dict[str, str]]]] = {
+    "allnew": {"templates": allnew_templates},
     "allshire": {"templates": allshire_templates},
+    "bluesorrow": {"templates": bluesorrow_templates},
     "dailycould": {"templates": dailycould_templates},
     "downmust": {"templates": downmust_templates},
-    "allnew": {"templates": allnew_templates},
-    "itsvermont": {"templates": itsvermont_templates},
-    "bluesorrow": {"templates": bluesorrow_templates},
     "fewidentity": {"templates": fewidentity_templates},
+    "itsvermont": {"templates": itsvermont_templates},
 }
