@@ -2,8 +2,8 @@ import typing
 
 _renovate = [
     {
-        "template": "renovate/renovate.json.j2",
-        "path": "{{ cookiecutter.project_slug }}/renovate.json",
+        "template": ".renovaterc.json.j2",
+        "path": "{{ cookiecutter.project_slug }}/.renovaterc.json",
     },
 ]
 
