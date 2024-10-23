@@ -61,7 +61,13 @@ _version = [
 ]
 
 _shared = (
-    _cookiecutter_json + _post_gen_project + _readme + _gitignore + _workflows + _go_mod + _renovate
+    _cookiecutter_json
+    + _post_gen_project
+    + _readme
+    + _gitignore
+    + _workflows
+    + _go_mod
+    + _renovate
 )
 
 allshire_templates = _shared + [

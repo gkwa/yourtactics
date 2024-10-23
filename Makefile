@@ -1,3 +1,3 @@
 pretty:
-	ruff format .
-	ruff check --fix
+	ruff format src
+	ruff check --fix src
