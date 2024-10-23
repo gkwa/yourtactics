@@ -1,5 +1,5 @@
 BIN := {% raw %}{{ cookiecutter.project_slug }}{% endraw %}
-PREFIX := {% block bxxarg %}{% raw %}github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/version{% endraw %}{% endblock %}
+PREFIX := {% block bxxarg %}{% raw %}github.com/{{ cookiecutter.github_username }}/$(BIN)/version{% endraw %}{% endblock %}
 
 SRC := $(shell find . -name '*.go')
 
