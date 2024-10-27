@@ -1,5 +1,12 @@
 import typing
 
+_pyproject_toml = [
+    {
+        "template": "python/pyproject.toml.j2",
+        "path": "{{ cookiecutter.project_slug }}/pyproject.toml",
+    },
+]
+
 _renovate = [
     {
         "template": ".renovaterc.json.j2",
@@ -152,6 +159,10 @@ itsvermont_templates = (
     ]
 )
 
+awaybeen_templates = (_pyproject_toml)
+
+justplay_templates = (_pyproject_toml)
+
 fewidentity_templates = dailycould_templates
 
 bluesorrow_templates = _shared
@@ -159,6 +170,8 @@ bluesorrow_templates = _shared
 data: typing.Dict[str, typing.Dict[str, typing.List[typing.Dict[str, str]]]] = {
     "allnew": {"templates": allnew_templates},
     "allshire": {"templates": allshire_templates},
+    "awaybeen": {"templates": awaybeen_templates},
+    "justplay": {"templates": justplay_templates},
     "bluesorrow": {"templates": bluesorrow_templates},
     "dailycould": {"templates": dailycould_templates},
     "downmust": {"templates": downmust_templates},
